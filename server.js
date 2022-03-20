@@ -11,7 +11,7 @@ const fs = require('fs');
 const app = express();
 app.use(cors());  // enable cross-origin requests
 const json_parser = body_parser.json();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 let posts = [];  // a flat array of post objects, same as in posts.json
 
@@ -59,7 +59,7 @@ app.post('/post', json_parser, async function(req, res) {
 
 /**
  * Like a post or reply
- * 
+ *
  * Expects a JSON-formatted object with keys "id" and "username".
  */
 app.post('/like', json_parser, async function(req, res) {
